@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap");
+.Calorifit {
+  position: relative;
+  width: 235px;
+  height: 507px;
+  background: #2d2d2d;
+  box-shadow: 80px 60px 60px rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shadow__inset {
+  pointer-events: none;
+  position: absolute;
+  z-index: 10;
+  width: 235px;
+  height: 507px;
+  border-radius: 25px;
+  box-shadow: inset -15px -1px 15px rgba(255, 255, 255, 0.1),
+    inset 15px 1px 15px rgba(9, 9, 9, 0.5);
+}
+.topgrill,
+.bottomgrill {
+  width: 150px;
+}
+
+.container {
+  width: 228px;
+  height: 494px;
+  position: relative;
+  background: #2d2d2d;
+  border-radius: 25px;
+  overflow-y: auto;
+  transition: 0.5s ease-in-out;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.speaker {
+  position: absolute;
+  width: 20px;
+  left: 106px;
+  top: 14px;
+  z-index: 100;
+}
+.brand_logo {
+  position: absolute;
+  width: 60px;
+  height: 14.53px;
+  left: 84px;
+  top: 13px;
+}
+
+.date {
+  position: absolute;
+  width: 86px;
+  height: 16px;
+  left: 12px;
+  top: 60px;
+
+  font-family: Chakra Petch;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height */
+
+  letter-spacing: -0.01em;
+
+  color: #696969;
+}
+
+.greeting {
+  position: absolute;
+  /* width: 116px; */
+  height: 23px;
+  left: 11px;
+  top: 74px;
+
+  font-family: Chakra Petch;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+
+  color: #e1e1e1;
+}
+.top__background {
+  position: absolute;
+  width: 228px;
+  height: 144px;
+  left: 0px;
+  top: 0px;
+  border-radius: 25px 25px 0 0;
+  background: linear-gradient(
+    180deg,
+    #1b171e -39.06%,
+    rgba(27, 23, 30, 0) 146.53%
+  );
+}
+
+.calorifit_logo {
+  position: absolute;
+  width: 60px;
+  height: 14.53px;
+  left: 84px;
+  top: 13px;
+}
+
+.github_icon {
+  cursor: pointer;
+  position: absolute;
+  left: 78.95%;
+  right: 15.79%;
+  top: 12.15%;
+  bottom: 85.43%;
+}
+.linkedin_icon {
+  cursor: pointer;
+  position: absolute;
+  left: 89.47%;
+  right: 5.26%;
+  top: 12.15%;
+  bottom: 85.43%;
+}
+
+.curve {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 39px;
+  top: 104px;
+  border-radius: 100%;
+  background: #2d2d2d;
+}
+.gradient_bar {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  left: 34px;
+  top: 99px;
+  border-radius: 100%;
+}
+.gradient_bar *{
+  transition: 2s ease-in-out;
+}
+
+
+.hero__circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 64px;
+  top: 129px;
+  border-radius: 100%;
+  background: #2d2d2d;
+  box-shadow: 8.16431e-16px 13.3333px 26.6667px rgba(9, 9, 9, 0.8),
+    inset -5.44287e-16px -8.88889px 8.88889px #232323,
+    inset 5.44287e-16px 8.88889px 8.88889px #353535;
+}
+
+.total_calories {
+  position: absolute;
+  left: 115px;
+  top: 150px;
+  transform: translateX(-50%);
+  font-family: Chakra Petch;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  /* transform: translate(-50%, -50%); */
+  color: #1bb0df;
+}
+
+.total_calories__title {
+  position: absolute;
+  width: 52px;
+  height: 16px;
+  left: 88px;
+  top: 175px;
+
+  font-family: Chakra Petch;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 0.08em;
+
+  color: #e1e1e1;
+}
+
+.total_calories__sub {
+  position: absolute;
+  width: 60px;
+  height: 16px;
+  left: 84px;
+  top: 190px;
+
+  font-family: Chakra Petch;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height */
+
+  letter-spacing: -0.01em;
+
+  color: #696969;
+}
+
+.item_container {
+  position: absolute;
+  width: 216px;
+  left: 0px;
+  top: 267px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 6px;
+  justify-content: center;
+}
+
+.add_item {
+  position: absolute;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  left: 94px;
+  bottom: 30px;
+  border-radius: 100%;
+  background: #6c33b3;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4.08216e-16px 6.66667px 13.3333px rgba(22, 10, 36, 0.8),
+    inset -2.72144e-16px -4.44444px 4.44444px #54288b,
+    inset 2.72144e-16px 4.44444px 4.44444px #7f3cd3;
+  transition: 0.5s ease-in-out;
+}
+
+.add_item:active {
+  transform: scale(0.9);
+  background: linear-gradient(180deg, #381b5d 0%, #9345f3 100%);
+  box-shadow: 4.08216e-16px 6.66667px 13.3333px rgba(22, 10, 36, 0.8),
+    inset -2.72144e-16px -4.44444px 4.44444px #2b1448,
+    inset 2.72144e-16px 4.44444px 4.44444px #a04bff;
+}
+
+.blur {
+  filter: blur(10px);
+}
+
+.Popup {
+  top: 156px;
+  z-index: 100;
+}
+
+.popup-enter {
+  opacity: 0;
+  top: 260px;
+}
+.popup-enter-active {
+  opacity: 1;
+  top: 156px;
+  transition: 500ms;
+}
+.popup-exit {
+  opacity: 1;
+}
+
+.popup-exit-active {
+  opacity: 0;
+  top: 260px;
+  transition: 500ms;
+}
