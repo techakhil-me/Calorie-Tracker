@@ -1,13 +1,12 @@
 {
+  "homepage": "https://techakhil-me.github.io/Calorie-Tracker",
   "name": "react",
   "version": "1.0.0",
   "description": "React example starter project",
-  "keywords": [
-    "react",
-    "starter"
-  ],
+  "keywords": ["react", "starter"],
   "main": "src/index.js",
   "dependencies": {
+    "gh-pages": "3.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-gradient-progress": "1.0.3",
@@ -27,10 +26,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
