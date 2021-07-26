@@ -62,7 +62,6 @@
 
 .date {
   position: absolute;
-  width: 86px;
   height: 16px;
   left: 12px;
   top: 60px;
@@ -81,7 +80,6 @@
 
 .greeting {
   position: absolute;
-  /* width: 116px; */
   height: 23px;
   left: 11px;
   top: 74px;

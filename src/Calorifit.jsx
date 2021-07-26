@@ -9,6 +9,20 @@ function Calorifit() {
   const [popup, setPopup] = useState(false);
   const [items, setItem] = useState([]);
   const [totalCalories, setTotalCalories] = useState(0);
+
+
+  function dayOfWeekAsString(dayIndex) {
+    return ["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][dayIndex] || '';
+  }
+  function monthAsString(monthIndex) {
+    return ["January", "February","March","April","May","June","July","August","September","October","November","December"][monthIndex] || '';
+  }
+
+  const d = new Date();
+  const date = d.getDate()
+  const day = dayOfWeekAsString(d.getDay())
+  const month = monthAsString(d.getMonth())
+  const time = d.getHours()
   useEffect(() => {
     if (localStorage.getItem("totalCalories")) {
       setTotalCalories(parseFloat(localStorage.getItem("totalCalories")));
@@ -36,8 +50,8 @@ function Calorifit() {
           alt=""
           className="brand_logo"
         />
-        <div className="date">Sunday 23 July</div>
-        <div className="greeting">Good Morning</div>
+        <div className="date">{day+" "+ date +" " + month}</div>
+        <div className="greeting">{ time < 12 ? "Good Morning" : time < 16 ? "Good Afternoon" : "Good Evening"}</div>
         <a href="https://github.com/techakhil-me/" className="github_icon" target="_blank" rel="noreferrer">
           <img src="https://general.stdcdn.com/github.svg" alt="" />
         </a>
