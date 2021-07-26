@@ -13,25 +13,35 @@ function Card({
   imgSrc
 }) {
   const handleBurn = (e) => {
-    setTotalCalories(totalCalories-items.find((item)=> item.id===id).calories)
+    setTotalCalories(
+      totalCalories - items.find((item) => item.id === id).calories
+    );
     items = items.filter((item) => item.id !== id);
     setItem([...items]);
+    localStorage.setItem("cards", JSON.stringify(items));
+    localStorage.setItem(
+      "totalCalories",
+      totalCalories - items.find((item) => item.id === id).calories
+    );
   };
   return (
     <div className="Card">
       <div className="Card__container">
         <div className="calories">{calories}</div>
         <div className="calories__title">calories</div>
-        <img
-          src={imgSrc}
-          alt=""
-          className="item_image"
-        />
+        <img src={imgSrc} alt="" className="item_image" />
         <div className="item_name">{name}</div>
         <div className="change_item" onClick={() => setPopup(id)}>
           CHANGE
         </div>
-        <div className="calorie_adjective" style={ {color: calories>460 ? 'red': calories>140 ? 'green' : 'yellow'}}>{calories>460 ? 'Too Fat': calories>140 ? 'Perfect' : 'Too Low'}</div>
+        <div
+          className="calorie_adjective"
+          style={{
+            color: calories > 460 ? "red" : calories > 140 ? "green" : "yellow"
+          }}
+        >
+          {calories > 460 ? "Too Fat" : calories > 140 ? "Perfect" : "Too Low"}
+        </div>
         <div className="delete" onClick={handleBurn}>
           BURN{" "}
           <svg
