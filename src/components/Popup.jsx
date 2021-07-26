@@ -35,7 +35,7 @@ function Popup({ popup, setPopup, setItem, items, totalCalories, setTotalCalorie
       fetch(`https://customsearch.googleapis.com/customsearch/v1?cx=da450330847f9c64a&fileType=png&num=3&q=${itemName}%20food&searchType=image&key=AIzaSyBc_uQZ_a-AwMWHmQK8zlMQDooZWFH8XTA`)
     .then((res) => res.json())
     .then((data) => {
-      setItem([...items, { id: uuidv1(),name: itemName, calories: caloriesCount, imgSrc:data.items[1].link }])
+      setItem([...items, { id: uuidv1(),name: itemName, calories: caloriesCount, imgSrc:data.items[2].link }])
       setTotalCalories(totalCalories+caloriesCount)
       localStorage.setItem('cards',JSON.stringify([...items, { id: uuidv1(),name: itemName, calories: caloriesCount, imgSrc:data.items[2].link }]));
       localStorage.setItem('totalCalories',totalCalories+caloriesCount);
