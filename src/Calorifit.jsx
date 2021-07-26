@@ -52,7 +52,7 @@ function Calorifit() {
         />
         <div className="date">{day+" "+ date +" " + month}</div>
         <div className="greeting">{ time < 12 ? "Good Morning" : time < 16 ? "Good Afternoon" : "Good Evening"}</div>
-        <a href="https://github.com/techakhil-me/" className="github_icon" target="_blank" rel="noreferrer">
+        <a href="https://github.com/techakhil-me/Calorie-Tracker" className="github_icon" target="_blank" rel="noreferrer">
           <img src="https://general.stdcdn.com/github.svg" alt="" />
         </a>
         <a

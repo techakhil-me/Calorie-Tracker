@@ -1,7 +1,7 @@
 <h2 align="center"><a  href="https://calorifit.netlify.app/">Calorifit - calorie tracker <- demo</a></h2>
 
 <p align="center">
-<img src="https://general.stdcdn.com/calorifit_mockup.png" width="80%"></p>
+<img src="https://cdn.discordapp.com/attachments/853631553204125696/869155191407124480/Calorie-Tracker_-mockup.gif" width="80%"></p>
 
 A simple calorie tracker built on react, made for simplicity and to display the extensive importance of User Interface in a project.
 Uses some npm packages for mount and unmounting components and one for generating unique id for cards.
