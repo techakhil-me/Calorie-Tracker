@@ -10,23 +10,50 @@ function Calorifit() {
   const [items, setItem] = useState([]);
   const [totalCalories, setTotalCalories] = useState(0);
 
-
   function dayOfWeekAsString(dayIndex) {
-    return ["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][dayIndex] || '';
+    return (
+      [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ][dayIndex] || ""
+    );
   }
   function monthAsString(monthIndex) {
-    return ["January", "February","March","April","May","June","July","August","September","October","November","December"][monthIndex] || '';
+    return (
+      [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ][monthIndex] || ""
+    );
   }
 
   const d = new Date();
-  const date = d.getDate()
-  const day = dayOfWeekAsString(d.getDay())
-  const month = monthAsString(d.getMonth())
-  const time = d.getHours()
+  const date = d.getDate();
+  const day = dayOfWeekAsString(d.getDay());
+  const month = monthAsString(d.getMonth());
+  const time = d.getHours();
   useEffect(() => {
     if (localStorage.getItem("totalCalories")) {
       setTotalCalories(parseFloat(localStorage.getItem("totalCalories")));
       setItem(JSON.parse(localStorage.getItem("cards")));
+      if (!JSON.parse(localStorage.getItem("cards"))) {
+        setTotalCalories(0);
+      }
     }
   }, []);
 
@@ -50,15 +77,27 @@ function Calorifit() {
           alt=""
           className="brand_logo"
         />
-        <div className="date">{day+" "+ date +" " + month}</div>
-        <div className="greeting">{ time < 12 ? "Good Morning" : time < 16 ? "Good Afternoon" : "Good Evening"}</div>
-        <a href="https://github.com/techakhil-me/Calorie-Tracker" className="github_icon" target="_blank" rel="noreferrer">
+        <div className="date">{day + " " + date + " " + month}</div>
+        <div className="greeting">
+          {time < 12
+            ? "Good Morning"
+            : time < 16
+            ? "Good Afternoon"
+            : "Good Evening"}
+        </div>
+        <a
+          href="https://github.com/techakhil-me/Calorie-Tracker"
+          className="github_icon"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src="https://general.stdcdn.com/github.svg" alt="" />
         </a>
         <a
           href="https://www.linkedin.com/in/techakhil/"
           className="linkedin_icon"
-          target="_blank" rel="noreferrer"
+          target="_blank"
+          rel="noreferrer"
         >
           <img src="https://general.stdcdn.com/linkedin.svg" alt="" />
         </a>
@@ -76,7 +115,9 @@ function Calorifit() {
         <div className="hero__circle"></div>
         <div className="total_calories">{totalCalories}</div>
         <div className="total_calories__title">calories</div>
-        <div className="total_calories__sub">more to go</div>
+        <div className="total_calories__sub">
+          {totalCalories ? "more to go" : "well done !"}
+        </div>
         {/* end hero circle */}
         <div className="item_container">
           {items.length ? (

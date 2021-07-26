@@ -16,13 +16,13 @@ function Card({
     setTotalCalories(
       totalCalories - items.find((item) => item.id === id).calories
     );
-    items = items.filter((item) => item.id !== id);
-    setItem([...items]);
-    localStorage.setItem("cards", JSON.stringify(items));
     localStorage.setItem(
       "totalCalories",
       totalCalories - items.find((item) => item.id === id).calories
     );
+    items = items.filter((item) => item.id !== id);
+    setItem([...items]);
+    localStorage.setItem("cards", JSON.stringify(items));
   };
   return (
     <div className="Card">
