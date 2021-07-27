@@ -11,15 +11,17 @@ function Popup({ popup, setPopup, setItem, items, totalCalories, setTotalCalorie
 
   const  handleSubmit = async (e) => {    
     e.preventDefault();
+let itemNames = itemName.split(' ').join('+')
+console.log(itemNames)
     if (itemName && caloriesCount){
     setPopup(false)
     if (tempItem!==-1){
       let total_calories = totalCalories - items[tempItem].calories
       if (items.[tempItem].name !== itemName){
-        fetch(`https://customsearch.googleapis.com/customsearch/v1?cx=da450330847f9c64a&fileType=png&num=3&q=${itemName}%20food&searchType=image&key=AIzaSyBc_uQZ_a-AwMWHmQK8zlMQDooZWFH8XTA`)
+        fetch(`https://customsearch.googleapis.com/customsearch/v1?cx=da450330847f9c64a&fileType=png&num=5&q=${itemName}+food+pngimg&searchType=image&key=AIzaSyBc_uQZ_a-AwMWHmQK8zlMQDooZWFH8XTA`)
         .then((res) => res.json())
         .then((data) => {
-        items[tempItem].imgSrc = data.items[2].link
+        items[tempItem].imgSrc = data.items[0].link
         items[tempItem].name = itemName
       items[tempItem].calories = caloriesCount
       setItem([...items])
@@ -32,12 +34,12 @@ function Popup({ popup, setPopup, setItem, items, totalCalories, setTotalCalorie
 
     }
     else {
-      fetch(`https://customsearch.googleapis.com/customsearch/v1?cx=da450330847f9c64a&fileType=png&num=3&q=${itemName}%20food&searchType=image&key=AIzaSyBc_uQZ_a-AwMWHmQK8zlMQDooZWFH8XTA`)
+      fetch(`https://customsearch.googleapis.com/customsearch/v1?cx=da450330847f9c64a&fileType=png&num=5&q=${itemName}+food+pngimg&searchType=image&key=AIzaSyBc_uQZ_a-AwMWHmQK8zlMQDooZWFH8XTA`)
     .then((res) => res.json())
     .then((data) => {
-      setItem([...items, { id: uuidv1(),name: itemName, calories: caloriesCount, imgSrc:data.items[2].link }])
+      setItem([...items, { id: uuidv1(),name: itemName, calories: caloriesCount, imgSrc:data.items[0].link }])
       setTotalCalories(totalCalories+caloriesCount)
-      localStorage.setItem('cards',JSON.stringify([...items, { id: uuidv1(),name: itemName, calories: caloriesCount, imgSrc:data.items[2].link }]));
+      localStorage.setItem('cards',JSON.stringify([...items, { id: uuidv1(),name: itemName, calories: caloriesCount, imgSrc:data.items[0].link }]));
       localStorage.setItem('totalCalories',totalCalories+caloriesCount);
     })
       
